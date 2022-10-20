@@ -20,7 +20,8 @@ router.post('/login', autenticar) // ** Autenticamos al usuario
 router.get('/confirmar/:token', confirmar) // * Usamos los dos puntos para generar un routing dinámico
 router.post('/olvide-password', olvidePassword) // * Cambio de Password
 
-router.route("/olvide-password/:token")
+router
+    .route("/olvide-password/:token")
     .get(comprobarToken) // * Comprobamos el token para cambiar contraseña
     .post(nuevoPassword) // * Cambiamos el password
 
